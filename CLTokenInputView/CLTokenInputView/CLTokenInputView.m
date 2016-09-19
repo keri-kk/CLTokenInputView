@@ -89,6 +89,11 @@ static CGFloat const HSPACE = 0.0;
     return CGSizeMake(UIViewNoIntrinsicMetric, self.intrinsicContentHeight);
 }
 
+#pragma mark - Allow becoming first responder
+
+- (BOOL)becomeFirstResponder {
+	return [self.textField becomeFirstResponder];
+}
 
 #pragma mark - Tint color
 
