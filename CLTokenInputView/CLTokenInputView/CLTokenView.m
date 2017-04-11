@@ -212,7 +212,7 @@ static NSString *const UNSELECTED_LABEL_NO_COMMA_FORMAT = @"%@";
     
     NSMutableDictionary<NSString *, id>* selectedAttributes;
     if (self.selectedTextAttributes) {
-        selectedAttributes = self.selectedTextAttributes;
+        selectedAttributes = self.selectedTextAttributes.mutableCopy;
     } else {
         selectedAttributes = [[NSMutableDictionary alloc] initWithDictionary: attributes];
         [selectedAttributes setObject:[UIColor whiteColor] forKey:NSForegroundColorAttributeName];

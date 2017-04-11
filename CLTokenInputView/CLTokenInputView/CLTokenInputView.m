@@ -340,7 +340,9 @@ static CGFloat const HSPACE = 0.0;
     if ([self.delegate respondsToSelector:@selector(tokenInputViewDidEndEditing:)]) {
         [self.delegate tokenInputViewDidEndEditing:self];
     }
-    self.tokenViews.lastObject.hideUnselectedComma = YES;
+    if ([self.text isEqualToString:@""]) {
+        self.tokenViews.lastObject.hideUnselectedComma = YES;
+    }
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
